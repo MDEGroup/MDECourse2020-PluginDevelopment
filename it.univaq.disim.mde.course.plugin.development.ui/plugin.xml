@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="it.univaq.disim.mde.course.plugin.development.ui.commands.category"
+            name="MDE 2020 course commands">
+      </category>
+      <command
+            categoryId="it.univaq.disim.mde.course.plugin.development.ui.commands.category"
+            name="Command One"
+            id="commandOne">
+      </command>
+      <command
+            categoryId="it.univaq.disim.mde.course.plugin.development.ui.commands.category"
+            name="Command Two"
+            id="commandTwo">
+      </command>
+   </extension>
+   
+   <!-- Command handler -->
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="it.univaq.disim.mde.course.plugin.development.ui.handlers.CommandOne"
+            commandId="commandOne">
+      </handler>
+      <handler
+            class="it.univaq.disim.mde.course.plugin.development.ui.handlers.CommandTwo"
+            commandId="commandTwo">
+      </handler>
+   </extension>
+   
+   
+   <extension
+         point="org.eclipse.ui.menus">
+      <!-- Top menu -->
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               id="it.univaq.disim.mde.course.plugin.development.ui.menus.sampleMenu"
+               label="MDE2020 Course Menu"
+               mnemonic="M">
+            <command
+                  commandId="commandOne"
+                  id="it.univaq.disim.mde.course.plugin.development.ui.menus.sampleCommand"
+                  mnemonic="S">
+            </command>
+            <command
+                  commandId="commandTwo"
+                  id="it.univaq.disim.mde.course.plugin.development.ui.menus.sampleCommand"
+                  mnemonic="T">
+            </command>
+         </menu>
+      </menuContribution>
+      
+      <!-- tool bar menu-->
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="it.univaq.disim.mde.course.plugin.development.ui.toolbars.sampleToolbar">
+            <command
+                  id="it.univaq.disim.mde.course.plugin.development.ui.toolbars.sampleCommand"
+                  commandId="commandOne"
+                  icon="icons/virus.png"
+                  tooltip="command one">
+            </command>
+         </toolbar>
+         <toolbar
+               id="it.univaq.disim.mde.course.plugin.development.ui.toolbars.sampleToolbar">
+            <command
+                  id="it.univaq.disim.mde.course.plugin.development.ui.toolbars.sampleCommand"
+                  commandId="commandTwo"
+                  icon="icons/paper.png"
+                  tooltip="command one">
+            </command>
+         </toolbar>
+      </menuContribution>
+      
+      <!-- popup menu -->
+      <menuContribution
+     		allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any">
+           <menu
+                 label="MDE Course 2020">
+           
+	        <command
+	                  commandId="commandOne"
+	                  label="First command"
+	                  style="push"
+	                  tooltip="Inject">
+	        </command>
+	        <command
+	                  commandId="commandTwo"
+	                  label="Second command"
+	                  style="push"
+	                  tooltip="Generate">
+	        </command>
+	        <visibleWhen
+               checkEnabled="false">
+                  <with variable="activeMenuSelection">
+				      <iterate
+				           ifEmpty="false">
+				         <adapt type="org.eclipse.core.resources.IResource">
+				              <test property="org.eclipse.core.resources.extension" value="java" />
+				         </adapt>
+				      </iterate>
+				   </with>
+	        </visibleWhen>
+        </menu>
+      </menuContribution>
+   </extension>
+   
+
+
+</plugin>

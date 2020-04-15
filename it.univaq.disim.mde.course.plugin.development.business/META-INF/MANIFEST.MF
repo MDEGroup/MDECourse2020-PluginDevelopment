@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Business
+Bundle-SymbolicName: it.univaq.disim.mde.course.plugin.development.business
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: it.univaq.disim.mde.course.plugin.devepment.business
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: it.univaq.disim.mde.course.plugin.devepment.business

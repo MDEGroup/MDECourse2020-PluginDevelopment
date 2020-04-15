@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ui
+Bundle-SymbolicName: it.univaq.disim.mde.course.plugin.development.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.ui,
+ it.univaq.disim.mde.course.plugin.development.business;bundle-version="1.0.0"
+Automatic-Module-Name: it.univaq.disim.mde.course.plugin.development.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: it.univaq.disim.mde.course.plugin.development.ui.handlers

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/it.univaq.disim.mde.course.plugin.developmnent.feature_1.0.0.202004151127.jar" id="it.univaq.disim.mde.course.plugin.developmnent.feature" version="1.0.0.202004151127">
+      <category name="live_demo"/>
+   </feature>
+   <category-def name="live_demo" label="Live demo"/>
+</site>
